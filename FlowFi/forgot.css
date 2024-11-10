@@ -1,0 +1,90 @@
+body{
+    text-align: left;
+}
+
+div{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     
+}
+
+#parent{
+    height: 600px;
+    width: 400px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    /*align-items: center;
+    justify-content: left;
+    text-align: left;*/
+    top: 100px;
+    /*left: 500px;*/
+    margin: auto;
+    
+    
+
+}
+#forgot
+{
+    color: #F19D3C;
+    position: relative;
+    align-self: center;
+    font-weight: bold;
+    font-size: large;
+    top: 50px;      
+}
+ 
+button 
+{
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 250px;
+    background-color: #ff9900;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid #F19D3C ;
+    text-decoration: none;
+  
+}
+button {
+    transition-duration: 0.4s;
+  }
+  
+button:hover {
+    background-color: white;  
+    
+  }
+
+
+#box1{
+    background-color:  rgba(217, 217, 217, 1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    height: 30px;
+    width: 200px;
+
+}
+#box2{
+    background-color:  rgba(217, 217, 217, 1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    height: 30px;
+    width: 200px;
+
+}
+#box3{
+    background-color:  rgba(217, 217, 217, 1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    height: 30px;
+    width: 200px;
+
+}
+
+ 
+ 

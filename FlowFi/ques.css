@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('last.jpg') no-repeat center center fixed;
+/*image edit*/
+    background-size: cover;
+}
+
+.contact-form-container {
+    text-align: center;
+    /*background: rgba(0, 0, 0, 0.6);*/
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-form-container p {
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ddd;
+}
