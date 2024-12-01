@@ -1,0 +1,464 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Breakdown</title>
+    <link rel="stylesheet" href="/styles/33.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+       Main Content
+      <div class="main-content">
+         Welcome Header
+        <header class="header">
+          <h1>Welcome, Priyal</h1>
+          <p>Today is Tue, 09 Sept 2024</p>
+        </header>
+
+         User Info Section 
+        <div class="user-info">
+          <header class="profile-header">
+            <div class="profile-details">
+              <img
+                src="/images/feed1.png"
+                alt="Profile Picture"
+                class="profile-pic" 
+              />
+              <div class="welcome-text">
+                <h2>Priyal Khullar</h2>
+                <p>priyalkhullar@gmail.com</p>
+              </div>
+            </div>
+            <button class="edit-button">Edit</button>
+          </header>
+
+          Profile Form  
+          <form id="budget-form" class="profile-form">
+            <div class="form-group">
+              <label for="full-name">Salary</label>
+              <input
+                type="text"
+                id="salary"
+                placeholder="Enter your salary for the month"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="nickname">Average Expected Expenditure</label>
+              <input
+                type="text"
+                id="expenditure"
+                placeholder="Enter your Average Expected Expenditure"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="country">Planning to Invest</label>
+              <input
+                type="text"
+                id="investment"
+                placeholder="Enter the amount that you are planning to invest"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="language">Total budget for this month</label>
+              <input
+                type="text"
+                id="total-budget"
+                placeholder="Total budget (Current Month + Previous Savings)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="timezone">Cautious Zone</label>
+              <input
+                type="text"
+                id="cautious-zone"
+                placeholder="Display of Categories where you spend the most"
+              />
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+          </form>
+
+        Pie Chart Section 
+          <div>
+            <canvas id="budgetChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('budget-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const salary = parseFloat(document.getElementById('salary').value) || 0;
+        const expenditure = parseFloat(document.getElementById('expenditure').value) || 0;
+        const investment = parseFloat(document.getElementById('investment').value) || 0;
+
+        // Calculate breakdown
+        const foodTransportInsurance = (salary * 0.5).toFixed(2);
+        const wants = (salary * 0.3).toFixed(2);
+        const savings = (salary * 0.2).toFixed(2);
+
+        // Pie chart data
+        const ctx = document.getElementById('budgetChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Food, Transport, Insurance', 'Wants (Entertainment, Travel, Hobbies)', 'Savings'],
+            datasets: [{
+              data: [foodTransportInsurance, wants, savings],
+              backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'top',
+              }
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html> 
+-->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Breakdown</title>
+    <link rel="stylesheet" href="/styles/33.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+       Main Content 
+      <div class="main-content">
+         Welcome Header 
+        <header class="header">
+          <h1>Welcome, Priyal</h1>
+          <p>Today is Tue, 09 Sept 2024</p>
+        </header>
+
+      ser Info Section
+        <div class="user-info">
+          <header class="profile-header">
+            <div class="profile-details">
+              <img
+                src="/images/feed1.png"
+                alt="Profile Picture"
+                class="profile-pic" 
+              />
+              <div class="welcome-text">
+                <h2>Priyal Khullar</h2>
+                <p>priyalkhullar@gmail.com</p>
+              </div>
+            </div>
+            <button class="edit-button">Edit</button>
+          </header>
+
+         Profile Form 
+          <form id="budget-form" class="profile-form">
+          New Inputs 
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="job">Job</label>
+              <input
+                type="text"
+                id="job"
+                placeholder="Enter your job title"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="salary">Salary</label>
+              <input
+                type="text"
+                id="salary"
+                placeholder="Enter your salary for the month"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="expenditure">Most of Your Expenditure</label>
+              <input
+                type="text"
+                id="expenditure"
+                placeholder="Enter where you spend the most"
+              />
+            </div>
+
+           Existing Inputs
+            <div class="form-group">
+              <label for="expected-expenditure">Average Expected Expenditure</label>
+              <input
+                type="text"
+                id="expected-expenditure"
+                placeholder="Enter your Average Expected Expenditure"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="investment">Planning to Invest</label>
+              <input
+                type="text"
+                id="investment"
+                placeholder="Enter the amount that you are planning to invest"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="total-budget">Total Budget for this Month</label>
+              <input
+                type="text"
+                id="total-budget"
+                placeholder="Total budget (Current Month + Previous Savings)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="cautious-zone">Cautious Zone</label>
+              <input
+                type="text"
+                id="cautious-zone"
+                placeholder="Display of Categories where you spend the most"
+              />
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+          </form>
+
+         Pie Chart Section
+          <div>
+            <canvas id="budgetChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/app.js"></script>  Linking external JS s
+
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Breakdown</title>
+    <link rel="stylesheet" href="/styles/33.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      .chart-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .chart-container .chart-info {
+        max-width: 400px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .chart-container canvas {
+        width: 300px !important;
+        height: 300px !important;
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <div class="container">
+       Main Content 
+      <div class="main-content">
+         Welcome Header 
+        <header class="header">
+          <h1>Welcome, Priyal</h1>
+          <p>Today is Tue, 09 Sept 2024</p>
+        </header>
+
+         User Info Section 
+        <div class="user-info">
+          <header class="profile-header">
+            <div class="profile-details">
+              <img
+                src="/images/feed1.png"
+                alt="Profile Picture"
+                class="profile-pic" 
+              />
+              <div class="welcome-text">
+                <h2>Priyal Khullar</h2>
+                <p>priyalkhullar@gmail.com</p>
+              </div>
+            </div>
+            <button class="edit-button">Edit</button>
+          </header>
+
+           Profile Form 
+          <form id="budget-form" class="profile-form">
+            <div class="form-group">
+              <label for="full-name">Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="profession">Profession</label>
+              <input
+                type="text"
+                id="profession"
+                placeholder="Enter your profession"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="salary">Salary</label>
+              <input
+                type="text"
+                id="salary"
+                placeholder="Enter your salary for the month"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="investment">Planning to Invest</label>
+              <select id="investment" name="">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+          </form>
+
+           Pie Chart Section 
+          <div class="chart-container">
+            <canvas id="budgetChart"></canvas>
+            <div class="chart-info" id="chartInfo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+const updateUser = async (userId, updatedData) => {
+    try {
+        const response = await fetch(`/api/auth/update/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',  // Ensure content type is JSON
+            },
+            body: JSON.stringify(updatedData),  // Send the updated data in the request body
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            console.log('User updated successfully:', data);
+            alert('User updated successfully');
+        } else {
+            // Handle error response from server (e.g., validation error)
+            console.error('Error updating user:', data.message);
+            alert(`Error: ${data.message}`);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error updating the user. Please try again.');
+    }
+};
+        
+      document.getElementById('budget-form').addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const profession = document.getElementById('profession').value.trim();
+        const salary = parseFloat(document.getElementById('salary').value) || 0;
+
+        const userId = localStorage.getItem('userId');  // Replace with the actual user ID
+        console.log(userId);
+        const updatedData = {
+            name: name,
+            profession: profession,
+            salary: salary,
+            isInvesting: document.getElementById('investment').value === 'yes' ? true : false,
+        };
+        await updateUser(userId, updatedData);
+
+        // Calculate breakdown
+        const foodTransportInsurance = (salary * 0.5).toFixed(2);
+        const wants = (salary * 0.3).toFixed(2);
+        const savings = (salary * 0.2).toFixed(2);
+
+        // Update pie chart
+        const ctx = document.getElementById('budgetChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: [
+              'Food, Transport, Insurance (50%)',
+              'Wants (30%)',
+              'Savings (20%)'
+            ],
+            datasets: [{
+              data: [foodTransportInsurance, wants, savings],
+              backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'top',
+              }
+            }
+          }
+        });
+
+        // Update text information
+        const chartInfo = document.getElementById('chartInfo');
+        chartInfo.innerHTML = `
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Profession:</strong> ${profession}</p>
+          <p><strong>Budget Breakdown:</strong></p>
+          <ul>
+            <li>Food, Transport, Insurance: ₹${foodTransportInsurance}</li>
+            <li>Wants (Entertainment, Travel, Hobbies): ₹${wants}</li>
+            <li>Savings: ₹${savings}</li>
+          </ul>
+        `;
+      });
+    </script>
+  </body>
+</html>
+
+
+
+

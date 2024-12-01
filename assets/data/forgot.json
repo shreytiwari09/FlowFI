@@ -1,0 +1,27 @@
+{
+    "pageTitle": "Forgot Your Password?",
+    "formFields": [
+      {
+        "id": "Code",
+        "label": "Validation Code",
+        "inputType": "text",
+        "inputId": "box1"
+      },
+      {
+        "id": "New",
+        "label": "New Password",
+        "inputType": "password",
+        "inputId": "box2"
+      },
+      {
+        "id": "Verify",
+        "label": "Verify Password",
+        "inputType": "password",
+        "inputId": "box3"
+      }
+    ],
+    "button": {
+      "text": "Change Password",
+      "linkTo": "login.html"
+    }
+  }

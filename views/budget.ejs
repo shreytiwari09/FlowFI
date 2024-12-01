@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting Tools</title>
+    <link rel="stylesheet" href="/styles/budget.css">
+</head>
+<body>
+    <section class="budgeting-section">
+        <div class="budgeting-content">
+            <!-- Dynamically populated -->
+        </div>
+    </section>
+
+    <section class="expense-section">
+        <!-- Dynamically populated -->
+    </section>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('./budget.json');
+                console.log(response.url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                renderContent(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        function renderContent(data) {
+            // Render main section
+            const budgetingContent = document.querySelector('.budgeting-content');
+            budgetingContent.innerHTML = `
+                <h1>${data.pageMeta.title}</h1>
+                <p>${data.pageMeta.description}</p>
+            `;
+
+            // Render expense tracking section
+            const expenseSection = document.querySelector('.expense-section');
+            expenseSection.innerHTML = `
+                <h2>${data.expenseTracking.title}</h2>
+                <p>${data.expenseTracking.description}</p>
+                <div class="card-container">
+                    ${data.expenseTracking.cards.map(card => `
+                        <div class="card">
+                            <img src="${card.image}" alt="${card.altText}">
+                            <h3>${card.title}</h3>
+                            <p>${card.description}</p>
+                        </div>
+                    `).join('')}
+                    <div class="wrapper"></div>
+                </div>
+            `;
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
+</body>
+</html>

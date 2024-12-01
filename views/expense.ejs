@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/styles/expense.css" />
+    <title>Expanseo | Expense Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="head-text">
+        <h1>FlowFi </h1><br />
+        <h2>Expense Tracker</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="left container">
+        <div class="balance">
+          <h4>Your Balance</h4>
+          <h1 id="balance">Rs. 0.00</h1>
+        </div>
+
+        <div class="inc-exp-container">
+          <div>
+            <h4>Income</h4>
+            <p id="show_credit" class="credit">Rs. 0.00</p>
+          </div>
+          <div>
+            <h4>Expense</h4>
+            <p id="show_debit" class="debit">Rs. 0.00</p>
+          </div>
+        </div>
+
+        <h3>Add new transaction</h3>
+        <form id="form">
+          <div class="form-control">
+            <label for="text">Describe the Transaction</label>
+            <input type="text" id="text" placeholder="Enter text..." />
+          </div>
+          <div class="form-control">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount..." />
+            <p>Type of transaction</p>
+            <select name="Type of expense" id="exp">
+              <option value="debit">Debit</option>
+              <option value="credit">Credit</option>
+            </select>
+          </div>
+          <!-- Button container with reset and submit buttons -->
+          <div class="form-actions">
+            <input type="submit" value="Submit" class="btn submit" />
+            <button id="reset-btn" class="btn reset-btn">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="right container">
+        <div class="graphbox">
+          <canvas id="myChart"></canvas>
+        </div>
+
+        <h3>History</h3>
+        <ul id="list" class="list">
+          <!-- <li class="minus">
+            Cash <span>-$400</span><button class="delete-btn">x</button>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <script>
+      window.onload=()=>{
+              // Add event listener to the form submission
+      document.getElementById('form').addEventListener('submit', async (e) => {
+          e.preventDefault(); // Prevent the form from submitting the traditional way
+
+          // Extract values from the form
+          const description = document.getElementById('text').value.trim();
+          const amount = parseFloat(document.getElementById('amount').value.trim());
+          const transactionType = document.getElementById('exp').value;
+
+          // Validation: Check that all fields are filled
+          if (!description || isNaN(amount) || amount <= 0) {
+              alert('Please provide valid inputs for all fields');
+              return;
+          }
+
+          // Send the data via a fetch request
+          const transactionData = {
+              name: description,
+              debit: transactionType === 'debit',  // Convert to boolean based on selected option
+              amount: amount,  // Include the amount field if needed in your backend
+          };
+
+          // try {
+            let userId = localStorage.getItem('userId');
+              const response = await fetch(`/api/transaction/add/${userId}`, {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(transactionData),
+              });
+
+              const data = await response.json();
+
+              if (response.ok) {
+                  console.log('Transaction added:', data);
+                  alert('Transaction added successfully!');
+                  document.getElementById('form').reset();
+              } else {
+                  alert('Error: ' + data.message);
+              }
+          // } catch (error) {
+          //     console.error('Error:', error);
+          //     alert('There was an error submitting the transaction.');
+          // }
+      });
+
+      document.getElementById('reset-btn').addEventListener('click', () => {
+          document.getElementById('form').reset();
+      });
+      }
+    </script>
+    <script src="expense.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{
+    "user": {
+      "name": "Priyal",
+      "fullName": "Priyal Khullar",
+      "email": "priyalkhullar@gmail.com",
+      "profilePicture": "feed1.png"
+    },
+    "date": {
+      "day": "Tue",
+      "date": "09",
+      "month": "Sept",
+      "year": "2024"
+    },
+    "financialInfo": {
+      "salary": "",
+      "averageExpenditure": "",
+      "previouslySaved": {
+        "options": [
+          "Select Previously Saved Amount",
+          "Rs. 5000",
+          "Rs. 10000",
+          "Rs. 15000",
+          "Rs. 20000"
+        ]
+      },
+      "plannedInvestment": "",
+      "totalBudget": "",
+      "cautiousZone": ""
+    },
+    "emailAddresses": [
+      {
+        "primary": true,
+        "email": "priyalkhullar@gmail.com"
+      }
+    ]
+  }

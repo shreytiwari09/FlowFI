@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal User Info Page</title>
+    <link rel="stylesheet" href="33.css" />
+  </head>
+  <body>
+    <div class="container">
+      
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Welcome Header -->
+        <header class="header">
+          <h1>Welcome, Priyal</h1>
+          <p>Today is Tue, 09 Sept 2024</p>
+        </header>
+
+        <!-- User Info Section -->
+        <div class="user-info">
+          <header class="profile-header">
+            <div class="profile-details">
+              <img
+                src="feed1.png"
+                alt="Profile Picture"
+                class="profile-pic" 
+              />
+              <div class="welcome-text">
+                <h2>Priyal Khullar</h2>
+                <p>priyalkhullar@gmail.com</p>
+              </div>
+            </div>
+            <button class="edit-button">Edit</button>
+          </header>
+
+          <!-- Profile Form -->
+          <form class="profile-form">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input
+                type="text"
+                id="full-name"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="nickname">Nickname</label>
+              <input
+                type="text"
+                id="nickname"
+                placeholder="Enter your nickname"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input
+                type="text"
+                id="country"
+                placeholder="Enter your country"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="language">Language</label>
+              <input
+                type="text"
+                id="language"
+                placeholder="Enter your preferred language"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="timezone">Time Zone</label>
+              <input
+                type="text"
+                id="timezone"
+                placeholder="Enter your time zone"
+              />
+            </div>
+
+            <!-- Email Section -->
+            <div class="email-section">
+              <h3>My Email Address</h3>
+              <p>priyalkhullar@gmail.com</p>
+              <button class="add-email-button">+ Add Email Address</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

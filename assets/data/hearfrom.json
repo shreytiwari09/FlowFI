@@ -1,0 +1,24 @@
+{
+    "sectionTitle": "What Our Users Have To Say",
+    "sectionDescription": "Hear from those who have transformed their financial lives with our system.",
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Phyllis Smith",
+        "image": "feed1.png",
+        "testimonial": "This website is really nice. It's easy to use, and it makes managing your money simple. I like that it guides you step by step, so you don't feel overwhelmed. Very helpful."
+      },
+      {
+        "id": 2,
+        "name": "Andy Bernardame",
+        "image": "feed2.png",
+        "testimonial": "Okay, this site is incredible awesome! It's got all the tools to help you budget, save, and invest. Super user-friendly, and honestly, I feel like a financial rockstar using it. I'm pumped about my money future!"
+      },
+      {
+        "id": 3,
+        "name": "Robert California",
+        "image": "feed3.png",
+        "testimonial": "This website is unreal! It's so simple, gives you a clear plan, and I never got overwhelmed. It's like having a personal assistant for your money. Super easy to use, and it makes you feel like you're totally in control. Highly recommend!"
+      }
+    ]
+  }

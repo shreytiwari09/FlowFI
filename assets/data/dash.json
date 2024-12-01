@@ -1,0 +1,65 @@
+{
+    "siteName": "FlowFi",
+    "menuItems": ["Dashboard", "Settings", "Payment", "Accounts", "Goal Tracker"],
+    "user": {
+      "name": "Priyal"
+    },
+    "cardInfo": {
+      "type": "cloudcash",
+      "accountType": "PREMIUM ACCOUNT",
+      "cardNumber": "5789 **** 2847",
+      "cardHolder": "Mike Smith",
+      "expiry": "06/21",
+      "weeklyLimit": {
+        "current": 7500,
+        "total": 10000,
+        "currency": "Rs"
+      }
+    },
+    "balanceInfo": {
+      "currentBalance": 2500,
+      "monthlyAllowance": 10000,
+      "moneySpent": 7500,
+      "currency": "Rs"
+    },
+    "monthlySummary": {
+      "title": "Monthly Sumup",
+      "categories": [
+        {
+          "name": "Food",
+          "percentage": 55
+        },
+        {
+          "name": "Fund Transfer",
+          "percentage": 25
+        },
+        {
+          "name": "Shopping",
+          "percentage": 20
+        }
+      ]
+    },
+    "houseInstalments": {
+      "title": "House Instalments",
+      "collected": 1200.00,
+      "total": 20000.00
+    },
+    "statusCards": [
+      {
+        "title": "Total Balance",
+        "amount": "xxx"
+      },
+      {
+        "title": "Total Income",
+        "amount": "xxx"
+      },
+      {
+        "title": "Total Saving",
+        "amount": "xxx"
+      },
+      {
+        "title": "Total Outcome",
+        "amount": "xxx"
+      }
+    ]
+  }

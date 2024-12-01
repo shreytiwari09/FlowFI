@@ -1,0 +1,269 @@
+ /* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/1.jpg'); /* Background image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* Header Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: black;
+}
+
+.nav-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.auth-buttons .sign-in,
+.auth-buttons .register {
+    background: none;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-buttons .register {
+    background-color: black;
+    color: white;
+}
+
+.auth-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* Main Content Styling */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    height: calc(100vh - 100px); /* Adjust height for header */
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.cta-button {
+    background-color: white;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Section Styling */
+.budgeting-section, .expense-section, .saving-section, .finance-management {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.budgeting-section {
+    background-image: url('/images/budget1.png'); /* Replace with appropriate image */
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-shadow: 
+        0px 0px 0px whitesmoke,
+        -1px 0px 0px whitesmoke,
+        0px 0px 0px whitesmoke,
+        -1px 0px 0px whitesmoke;
+}
+
+.expense-section, .saving-section, .finance-management {
+    background-color: white;
+    color: #333;
+}
+
+.budgeting-section h1,
+.expense-section h2,
+.saving-section h2,
+.finance-management h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.budgeting-section p,
+.expense-section p,
+.saving-section p,
+.finance-management p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.finance-management {
+    padding: 40px;
+}
+
+.finance-management h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Card Container Styling */
+.card-container, .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img, .card-image img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card span {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .card-container, .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.testimonials p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 350px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.testimonial img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.testimonial h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.testimonial p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}

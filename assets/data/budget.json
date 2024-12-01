@@ -1,0 +1,40 @@
+{
+    "pageMeta": {
+      "title": "Budgeting Tools",
+      "description": "Provides a set of tools to create and track your budget, helping users manage their finances effectively."
+    },
+    "expenseTracking": {
+      "title": "Expense Tracking",
+      "description": "Allows users to log and categorize their expenses, providing a clear overview of their spending habits.",
+      "cards": [
+        {
+          "id": 1,
+          "image": "easy.png",
+          "altText": "Easy Expense Logging",
+          "title": "Easy Expense Logging",
+          "description": "Effortlessly log your expenses with our user-friendly interface. Simply enter the amount, select a category, and add a description if needed."
+        },
+        {
+          "id": 2,
+          "image": "category.png",
+          "altText": "Categorize Expenses",
+          "title": "Categorize Expenses",
+          "description": "Organize your expenses into categories to better understand your spending patterns."
+        },
+        {
+          "id": 3,
+          "image": "clear.png",
+          "altText": "Clear Spending Overview",
+          "title": "Clear Spending Overview",
+          "description": "Get a comprehensive overview of your spending habits with intuitive charts and graphs."
+        },
+        {
+          "id": 4,
+          "image": "smart.png",
+          "altText": "Smart Expense Insights",
+          "title": "Smart Expense Insights",
+          "description": "Receive personalized insights and recommendations based on your spending patterns."
+        }
+      ]
+    }
+  }

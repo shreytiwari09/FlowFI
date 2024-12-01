@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="form-container">
+            <div class="form-content">
+                <a href="javascript:void(0);" class="back-button">←</a>
+                <h2>WELCOME BACK</h2>
+                <p>Welcome back! Please enter your details.</p>
+                
+                <!-- Added action and method for form submission -->
+                <form class="login-form" id="signin">
+                    <input type="email" name="email" placeholder="Enter your email" >
+                    <input type="password" name="password" placeholder="Password" >
+                    <div class="options">
+                        <label><input type="checkbox" name="remember"> Remember me</label>
+                        <a href="/forgot" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <!-- Corrected button for form submission -->
+                     <a href="/entry" class="sign-in-btn">
+                    <button type="submit" class="sign-in-btn">Log In</button>
+                     </a>
+
+                    <!-- Button for Google sign-in (JavaScript action can be added later) -->
+                    <button type="button" class="google-signin-btn">Sign in with Google</button>
+
+                    <!-- Fixed signup link pointing to the correct signup page -->
+                    <p class="signup-text">Don't have an account? <a href="/register" class="forgot-password">Sign up for free!</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="illustration-container">
+            <!-- Image with a meaningful alt attribute -->
+            <img src="/images/illustration-image.jpg">
+        </div>
+    </div>
+</body>
+<script>
+    window.onload=()=>{
+        let signup = document.getElementById('signin');
+    signup.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const {email,password} = e.target;
+        if ( !email.value || !password.value) {
+            alert('All fields are required');
+            return;
+        }
+    
+        try {
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email:email.value, password:password.value }),
+            });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                alert(data.message);
+                localStorage.setItem('userId',data.user.id);
+                window.location.href = '/';
+            } else {
+                alert(data.error);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        }
+    });
+    
+    }
+    </script>
+</html>
+
+

@@ -1,0 +1,21 @@
+{
+  "name": "flowfi",
+  "version": "1.0.0",
+  "description": "A static finance manager website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Vidipt",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "flowfi": "file:",
+    "mongoose": "^8.8.3",
+    "nodemon": "^3.1.7"
+  }
+}
