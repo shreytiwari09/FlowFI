@@ -1,7 +1,7 @@
 # FlowFI
 FlowFi is a personal finance management website designed to help users take control of their earnings, track expenses, and plan future investments.The platform provides a
 comprehensive overview of financial activities, visually representing data through charts and
-bar graphs, and offers the latest articles and news on SIPs, credit cards, and other
+bar graphs.
 investment opportunities.
 This project is currently under development as part of our B.Tech 2nd-year coursework by
 Shrey Tiwari, Priyal Kullar , and Vidipt Jain .
@@ -10,10 +10,7 @@ Shrey Tiwari, Priyal Kullar , and Vidipt Jain .
 ● Earnings Management: Users will be able to input and track their earnings.
 ● Expense Tracking: Detailed tracking of expenses with category-wise breakdowns.
 ● Visual Insights: Interactive charts and bar graphs for income vs. expenses analysis.
-● Latest Articles: A curated feed of articles and news on personal finance, including
-information on SIPs, credit cards, and investment opportunities.
-● Investment Suggestions: Users will be able to explore and learn about financial
-products and investment plans
+
 
 # Technology Stack:
 ● Frontend: HTML, CSS, JavaScript 
